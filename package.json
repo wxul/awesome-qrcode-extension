@@ -1,0 +1,40 @@
+{
+    "name": "awesome-qrcode-extension",
+    "version": "1.0.0",
+    "description": "二维码扩展",
+    "main": "index.js",
+    "scripts": {
+        "dev": "rimraf dist/. && cross-env NODE_ENV=development webpack -d --config ./build/webpack.dev.config.js --watch",
+        "dev:s": "rimraf dist/. && cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 -d --hot --content-base dist/ --inline --compress --history-api-fallback --port 8765 --config ./build/webpack.dev.config.js",
+        "build": "rimraf dist/. && cross-env NODE_ENV=production webpack --config ./build/webpack.build.config.js --progress --colors"
+    },
+    "keywords": [
+        "二维码"
+    ],
+    "author": "Albert",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "babel": "^6.23.0",
+        "babel-core": "^6.25.0",
+        "babel-loader": "^7.1.1",
+        "babel-preset-latest": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "copy-webpack-plugin": "^4.0.1",
+        "cross-env": "^5.0.1",
+        "css-loader": "^0.28.4",
+        "exports-loader": "^0.6.4",
+        "file-loader": "^0.11.2",
+        "html-webpack-plugin": "^2.29.0",
+        "less": "^2.7.2",
+        "less-loader": "^4.0.5",
+        "rimraf": "^2.6.1",
+        "style-loader": "^0.18.2",
+        "vue": "^2.4.1",
+        "vue-html-loader": "^1.2.4",
+        "vue-loader": "^12.2.2",
+        "vue-template-compiler": "^2.4.1",
+        "webpack": "^3.3.0",
+        "webpack-bundle-analyzer": "^2.8.3",
+        "webpack-dev-server": "^2.5.1"
+    }
+}
