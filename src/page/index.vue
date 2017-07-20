@@ -37,6 +37,11 @@
             to(s) {
                 this.view = s;
             }
+        },
+        mounted() {
+            chrome.tabs.getSelected(null, function (w) {
+                console.log(w);
+            });
         }
     };
 </script>

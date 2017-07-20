@@ -9,8 +9,7 @@
     },
     "permissions": [
         "activeTab",
-        "https://*.googleapis.com/",
-        "https://cdn.bootcss.com/"
+        "https://*.googleapis.com/"
     ],
     "icons": {
         "16": "icon/icon-16.png",
