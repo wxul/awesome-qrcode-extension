@@ -24,7 +24,7 @@ export default {
         }
     },
     mounted() {
-        this.QR = new createQRImage('canvas', { callback: this.cb, width: 150 });
+        this.QR = new createQRImage('canvas', { callback: this.cb, width: 200 });
         this.QR.changeText(this.text);
     },
     methods: {

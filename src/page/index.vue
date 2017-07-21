@@ -1,7 +1,9 @@
 <template>
     <div class="main">
         <nav-menu ref="menu" @change="to"></nav-menu>
-        <component ref="current" class="main-content" v-bind:is="view"></component>
+        <keep-alive>
+            <component ref="current" class="main-content" v-bind:is="view"></component>
+        </keep-alive>
         <qr></qr>
     </div>
 </template>
