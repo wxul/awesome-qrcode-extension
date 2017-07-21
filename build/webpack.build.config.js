@@ -1,14 +1,16 @@
-var path = require('path');
-var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var baseconfig = require('./webpack.base.config.js');
+const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const baseconfig = require('./webpack.base.config.js');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-var APP_PATH = path.resolve(__dirname, '../dist');
-var PRO_PATH = path.resolve(__dirname, '../');
-var STATIC_PATH = path.resolve(__dirname, '../static');
+const APP_PATH = path.resolve(__dirname, '../dist');
+const PRO_PATH = path.resolve(__dirname, '../');
+const STATIC_PATH = path.resolve(__dirname, '../static');
 
 var config = Object.assign({}, baseconfig, {
+    devtool: 'cheap-module-source-map',
     output: {
         path: APP_PATH,
         publicPath: './',
@@ -31,7 +33,8 @@ config.plugins = (baseconfig.plugins || []).concat([
     }),
     new CopyWebpackPlugin([{
         from: STATIC_PATH
-    }])
+    }]),
+    new UglifyJSPlugin()
 ]);
 
 module.exports = config;

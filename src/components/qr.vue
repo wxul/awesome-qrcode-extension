@@ -1,7 +1,7 @@
 <template>
     <div class="qrcode">
         <canvas ref="cav" id="canvas"></canvas>
-        <a :href="base64||'javascript:;'" :download="lang.filename" class="btn" @click="save">{{lang.btn_save}}</a>
+        <a :href="base64||'javascript:;'" :download="lang.filename" class="btn">{{lang.btn_save}}</a>
     </div>
 </template>
 <script>
@@ -28,9 +28,6 @@ export default {
         this.QR.changeText(this.text);
     },
     methods: {
-        save() {
-            console.log('save click');
-        },
         cb() {
             this.base64 = this.$refs.cav.toDataURL('image/png');
         }
@@ -40,6 +37,7 @@ export default {
 <style lang="less">
 .qrcode {
     width: 100%;
+    padding-top: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -47,6 +45,8 @@ export default {
     canvas {
         display: block;
         max-width: 100%;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px #ff6200;
     }
 }
 </style>

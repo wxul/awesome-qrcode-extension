@@ -1,24 +1,24 @@
-var path = require('path');
-var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var baseconfig = require('./webpack.base.config.js');
+const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const baseconfig = require('./webpack.base.config.js');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-var APP_PATH = path.resolve(__dirname, '../dist');
-var PRO_PATH = path.resolve(__dirname, '../');
-var STATIC_PATH = path.resolve(__dirname, '../static');
+const APP_PATH = path.resolve(__dirname, '../dist');
+const PRO_PATH = path.resolve(__dirname, '../');
+const STATIC_PATH = path.resolve(__dirname, '../static');
 
 var config = Object.assign({}, baseconfig, {
     output: {
         path: APP_PATH,
         publicPath: './',
         filename: '[name].js',
-        chunkFilename: '[name].[chunkhash].min.js'
+        chunkFilename: '[name],[chunkhash].min.js'
     }
 });
 
-config.plugins = (config.plugins || []).concat([
-    new webpack.HotModuleReplacementPlugin(),
+config.plugins = (baseconfig.plugins || []).concat([
     new HtmlWebpackPlugin({
         filename: 'popup.html',
         template: 'src/popup.html',

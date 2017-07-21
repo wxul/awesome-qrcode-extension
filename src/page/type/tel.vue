@@ -22,7 +22,7 @@ export default {
     methods: {
         ...mapActions(['changeText']),
         generate(t) {
-            this.changeText(t);
+            this.changeText(`tel:${t}`);
         }
     }
 };

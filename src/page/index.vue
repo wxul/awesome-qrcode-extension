@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import '@assets/font-awesome/css/font-awesome.min.css';
+import '@assets/font-awesome/css/font-awesome.css';
 import '@assets/global.css';
 import '@assets/style.less';
 var Qr = require('@components/qr.vue');

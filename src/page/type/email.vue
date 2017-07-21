@@ -18,12 +18,11 @@ export default {
         ...mapGetters(['text', 'lang'])
     },
     mounted() {
-        // this.txt = this.text;
     },
     methods: {
         ...mapActions(['changeText']),
         generate(t) {
-            this.changeText(t);
+            this.changeText(`mailto:${t}`);
         }
     }
 };
