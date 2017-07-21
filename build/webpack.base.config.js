@@ -12,7 +12,7 @@ module.exports = {
     devtool: 'source-map',
     entry: {
         app: path.resolve(__dirname, '../src/index.js'),
-        vendor: ['vue']
+        vendor: ['vue', 'vuex']
     },
     module: {
         rules: [{
@@ -47,7 +47,8 @@ module.exports = {
             '@assets': path.resolve(__dirname, '../src/assets'),
             '@utils': path.resolve(__dirname, '../src/utils'),
             '@components': path.resolve(__dirname, '../src/components'),
-            '@page': path.resolve(__dirname, '../src/page')
+            '@page': path.resolve(__dirname, '../src/page'),
+            '@store': path.resolve(__dirname, '../src/store')
         }
     },
     plugins: [
