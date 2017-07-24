@@ -1,9 +1,13 @@
 <template>
     <div class="main">
         <nav-menu ref="menu" @change="to"></nav-menu>
-        <keep-alive>
-            <component ref="current" class="main-content" v-bind:is="view"></component>
-        </keep-alive>
+        <collapse-transition>
+            <div class="main-content">
+                <keep-alive>
+                    <component ref="current" v-bind:is="view"></component>
+                </keep-alive>
+            </div>
+        </collapse-transition>
         <qr></qr>
     </div>
 </template>
@@ -20,6 +24,7 @@ var CARD = require('@page/type/card.vue');
 var WIFI = require('@page/type/wifi.vue');
 var SMS = require('@page/type/sms.vue');
 var EFFECT = require('@page/type/effect.vue');
+import CollapseTransition from '@components/collapse-transition';
 
 import { mapGetters, mapActions } from 'vuex';
 
@@ -33,7 +38,8 @@ export default {
         CARD,
         WIFI,
         SMS,
-        EFFECT
+        EFFECT,
+        CollapseTransition
     },
     data() {
         return {
