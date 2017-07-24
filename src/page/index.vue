@@ -1,13 +1,13 @@
 <template>
     <div class="main">
         <nav-menu ref="menu" @change="to"></nav-menu>
-        <collapse-transition>
-            <div class="main-content">
+        <div class="main-content">
+            <transition name="" mode="out-in">
                 <keep-alive>
                     <component ref="current" v-bind:is="view"></component>
                 </keep-alive>
-            </div>
-        </collapse-transition>
+            </transition>
+        </div>
         <qr></qr>
     </div>
 </template>
@@ -77,5 +77,16 @@ export default {
 };
 </script>
 <style lang="less">
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+    visibility: hidden;
+}
+
 @import './index.less';
 </style>
