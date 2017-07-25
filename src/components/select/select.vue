@@ -91,9 +91,10 @@ export default {
     }
 
     .selection {
+        z-index: 22;
         position: absolute;
         left: 0;
-        top: 26px;
+        top: 25px;
         width: 100%;
         box-sizing: border-box;
         border: 1px solid #ff6200;

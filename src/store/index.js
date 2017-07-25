@@ -15,6 +15,7 @@ export default new Vuex.Store({
             gccolor: '#000000',
             gctype: 'circular',
             margin: 10,
+            width: 200,
             level: 'L',
             rotate: '0',
             logo: null,

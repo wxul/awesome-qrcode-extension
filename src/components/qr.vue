@@ -51,8 +51,21 @@ export default {
         'effect.margin': function (v, old) {
             this.QR.changeMargin(v);
         },
+        'effect.width': function (v, old) {
+            this.QR.changeWidth(v);
+        },
         'effect.gctype': function (v, old) {
             this.QR.changeGradientWay(v, this.effect.gccolor);
+        },
+        'effect.logotype': function (v, old) {
+            this.QR.changeLogotype(v);
+        },
+        'effect.logo': function (v, old) {
+            if (v) {
+                this.QR.changeLogoimg(v, this.effect.logotype);
+            } else {
+                this.QR.resetAll();
+            }
         }
     },
     mounted() {
