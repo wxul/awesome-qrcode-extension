@@ -15,12 +15,44 @@ export default {
         };
     },
     computed: {
-        ...mapGetters(['text', 'lang']),
-
+        ...mapGetters(['text', 'lang', 'effect'])
     },
     watch: {
         text: function (v, old) {
             this.QR.changeText(v);
+        },
+        'effect.round': function (v, old) {
+            this.QR.changeRound(v < 0, Math.abs(v) / 100);
+        },
+        'effect.fgcolor': function (v, old) {
+            this.QR.changeFgColor(v);
+        },
+        'effect.bgcolor': function (v, old) {
+            this.QR.changeBgColor(v);
+        },
+        'effect.ptcolor': function (v, old) {
+            this.QR.changePtColor(v);
+        },
+        'effect.inptcolor': function (v, old) {
+            this.QR.changeInPtColor(v);
+        },
+        'effect.gccolor': function (v, old) {
+            this.QR.changeGcColor(this.effect.gctype, v);
+        },
+        'effect.width': function (v, old) {
+            this.QR.changeWidth(v);
+        },
+        'effect.rotate': function (v, old) {
+            this.QR.changeRotate(v);
+        },
+        'effect.level': function (v, old) {
+            this.QR.changeLevel(v);
+        },
+        'effect.margin': function (v, old) {
+            this.QR.changeMargin(v);
+        },
+        'effect.gctype': function (v, old) {
+            this.QR.changeGradientWay(v, this.effect.gccolor);
         }
     },
     mounted() {

@@ -6,7 +6,20 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         text: '',
-        effect: {},
+        effect: {
+            round: 0,
+            fgcolor: '#000000',
+            bgcolor: '#FFFFFF',
+            ptcolor: '#000000',
+            inptcolor: '#000000',
+            gccolor: '#000000',
+            gctype: 'circular',
+            margin: 10,
+            level: 'L',
+            rotate: '0',
+            logo: null,
+            logotype: 'default'
+        },
         lang: {
             menu_txt: '',
             menu_tel: '',
@@ -87,6 +100,26 @@ export default new Vuex.Store({
         },
         setLocale(state, payload) {
             state.lang = payload;
+        },
+        setEffect(state, payload) {
+            state.effect[payload.name] = payload.value;
+        },
+        clearEffect(state, payload) {
+            state.effect = {
+                round: 0,
+                fgcolor: '#000000',
+                bgcolor: '#FFFFFF',
+                ptcolor: '#000000',
+                inptcolor: '#000000',
+                gccolor: '#000000',
+                gctype: 'circular',
+                margin: 10,
+                level: 'L',
+                rotate: '0',
+                width: 200,
+                logo: null,
+                logotype: 'default'
+            };
         }
     },
     actions: {
@@ -95,6 +128,12 @@ export default new Vuex.Store({
         },
         setLocale(d, payload) {
             d.commit('setLocale', payload);
+        },
+        setEffect(d, payload) {
+            d.commit('setEffect', payload);
+        },
+        clearEffect(d, payload) {
+            d.commit('clearEffect', payload);
         }
     }
 });
