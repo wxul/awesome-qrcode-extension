@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const archiver = require('archiver');
+const app = require('../package.json');
 
 const out = path.resolve(__dirname, '../out');
 fs.mkdir(out, err => {
@@ -26,6 +27,6 @@ fs.mkdir(out, err => {
         throw err;
     });
     archive.pipe(output);
-    archive.directory(path.resolve(__dirname, '../dist'), false);
+    archive.directory(path.resolve(__dirname, '../dist'), app.name);
     archive.finalize();
 });
