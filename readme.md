@@ -3,7 +3,11 @@
 
 ![Logo](./assets/logo.png)
 
-[Google商店地址-还没有](还没有)
+[Google商店地址-还没有](https://chrome.google.com/webstore/detail/qrcode-generator/fdpanjjjnjopokhncmliffkcnnhjaiec)
+
+#### 预览
+
+![Screen](./assets/screen2.png)
 
 #### 项目
 
