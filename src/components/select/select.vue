@@ -67,7 +67,7 @@ export default {
     .select-box {
         box-sizing: border-box;
         border: 1px solid #ff6200;
-        padding: 4px 8px;
+        padding: 4px;
         height: 27px;
         line-height: 18px;
         cursor: pointer;
@@ -94,7 +94,7 @@ export default {
         z-index: 22;
         position: absolute;
         left: 0;
-        top: 25px;
+        top: 26px;
         width: 100%;
         box-sizing: border-box;
         border: 1px solid #ff6200;
@@ -104,7 +104,7 @@ export default {
         .select-item {
             display: block;
             box-sizing: border-box;
-            padding: 4px 8px;
+            padding: 4px;
             height: 27px;
             line-height: 18px;
             cursor: pointer;

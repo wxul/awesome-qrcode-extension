@@ -36,15 +36,15 @@
         "description": ""
     },
     "p_txt": {
-        "message": "text or website URL",
+        "message": "Text or website URL",
         "description": ""
     },
     "p_tel": {
-        "message": "I'm not good at English but I think you should understand",
+        "message": "Telephone Number",
         "description": ""
     },
     "p_email": {
-        "message": "",
+        "message": "Email",
         "description": ""
     },
     "c_N": {

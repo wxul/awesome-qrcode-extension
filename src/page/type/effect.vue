@@ -13,7 +13,7 @@
             <color-picker class="w50" v-model.trim="inptcolor" :tip="lang.ef_inpt"></color-picker>
         </div>
         <div class="input-line">
-            <color-picker class="w50" v-model.trim="gccolor" :tip="lang.ef_gc"></color-picker>
+            <color-picker class="w50" v-model.trim="gccolor" :tip="lang.ef_gccolor"></color-picker>
             <x-select class="w50" v-model="gctype" :items="gctypes" :tip="lang.ef_gctype"></x-select>
         </div>
         <div class="input-line">
